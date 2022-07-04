@@ -28,3 +28,13 @@ b7: đẩy code lên github
     git push <remote> <branch>
 
 VD: git push origin lesson2
+
+
++++++++++++++++++
+    ĐƯA CODE VỀ MÁY
+b1:
+
+    git checkout main
+
+b2:
+    git pull origin main
