@@ -32,6 +32,7 @@ VD: git push origin lesson2
 
 +++++++++++++++++
     ĐƯA CODE VỀ MÁY
+    cla
 b1:
 
     git checkout main

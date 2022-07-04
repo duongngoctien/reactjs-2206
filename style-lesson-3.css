@@ -1,0 +1,57 @@
+h2 {
+    display: block;
+    margin: 50px;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    position: relative;
+}
+
+h2:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: auto;
+    /*change here*/
+    right: 0;
+    /*change here*/
+    width: 0;
+    height: 100%;
+    background-color: #e74c3c;
+    transition: .25s;
+    z-index: -1;
+}
+
+h2:hover:before {
+    width: 100%;
+    left: 0;
+    /*change here*/
+    right: auto;
+    /*change here*/
+}
+
+p::after {
+    content: "Instagram";
+    color: tomato;
+    background-color: aqua;
+    padding: 8px;
+    margin: 16px;
+}
+
+/* .list li{
+    background-color: gray ;
+} */
+
+.list li:first-child {
+    color: tomato;
+    font-size: 24px;
+}
+
+.list li:hover {
+    background-color: aqua;
+    width: 20%;
+}
+
+input:focus {
+    background-color: aqua;
+}

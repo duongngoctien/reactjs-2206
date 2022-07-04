@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.header{
+    background-color: rgb(47, 47, 47);
+    /* position: relative; */
+    /* top: 0; */
+}
+
+.nav li{
+    list-style: none;
+    display: inline;
+}
+
+.nav li a{
+    line-height: 45px;
+    color: #ccc;
+    font-weight: 300;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 24px;
+    display: inline-block;
+
+}
+
+.nav li:hover a{
+    background-color: rgb(34, 235, 168);
+    color: #000;
+}
