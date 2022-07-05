@@ -4,7 +4,7 @@ b1: tạo nhánh mới
 
     git checkout-b <branch mới>
 
-    VD: git checkout b lession2
+    VD: git checkout -b lession2
 b2: làm bài tập
 b3: kiểm tra trạng thái
 
