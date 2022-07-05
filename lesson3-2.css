@@ -5,8 +5,8 @@
 }
 .header{
     background-color: rgb(47, 47, 47);
-    /* position: relative; */
-    /* top: 0; */
+    position: relative;
+    top: 0;
 }
 
 .nav li{
@@ -28,4 +28,74 @@
 .nav li:hover a{
     background-color: rgb(34, 235, 168);
     color: #000;
+    cursor: pointer;
 }
+
+.section{
+    width: 920px;
+    /* position: fixed;
+    top: 100px; */
+    margin: auto;
+    align-items: center;
+    margin-top: 100px;
+}
+.sub-header{
+    text-transform: uppercase;
+    background-color: rgb(19, 69, 101);
+    line-height: 45px;
+    padding: 8px 0;
+
+}
+.sub-nav{
+    display: inline-block;
+    float: right;
+    padding-right: 32px;
+}
+.sub-header h3{
+    color:#ccc ;
+    display: inline-block;
+    padding: 0 64px;
+
+}
+.sub-nav li{
+    list-style: none;
+    display: inline;
+
+}
+.sub-nav li a{
+    display: inline;
+    text-decoration: none;
+    color:#ccc ;
+    padding: 16px 16px;
+
+}
+.sub-nav li a:hover{
+    cursor: pointer;
+    background-color: rgb(9, 31, 46);
+}
+
+.content{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 48px;
+    color: rgb(19, 69, 101) ;
+}
+.decor{
+    margin-top: -10px;
+}
+.icon{
+    font-size: 56px;
+    text-decoration: solid;
+}
+input{
+    display: block;
+    margin: auto;
+    width: 500px;
+    margin-top: 24px;
+    padding: 8px;
+    border: 0.5px solid #ccc;
+    border-radius: 2px;
+}
+
+
