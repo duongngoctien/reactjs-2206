@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 920px;
+    margin: auto;
+}
+.box {
+    clear: both;
+
+}
+
+.box1, .box2 {
+    background-color: antiquewhite;
+    width: 50%;
+    float: left;
+    padding: 50px;
+    text-align: center;
+}
+
+.box2 {
+    background-color: #ccc;
+
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+.box-1, .box-2, .box-3{
+    float: left;
+    width: 33.3333%;
+    background-color: aqua;
+    padding: 20px;
+}
+
+.box-2 {
+    background-color: aquamarine;
+}
+
+.box-3 {
+    background-color: bisque;
+}
+
+.clearfixx {
+    overflow: auto;
+}
