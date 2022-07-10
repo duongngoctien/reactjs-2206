@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer {
+    margin: auto;
+    padding: 24px 32px;
+    background-color: rgb(233, 232, 232);
+
+    /* width: 70%; */
+    /* height: 500px; */
+}
+.top , .bot{
+    padding: 24px 32px;
+}
+.heading {
+    font-size: 18px;
+    padding-top: 8px;
+    font-weight: 450;
+}
+
+
+.body {
+}
+
+.info {
+    padding: 8px 16px;
+}
+.info p {
+    font-size: 16px;
+}
+.tel , .tel-2 {
+    color: rgb(107, 107, 107);
+}
+.gach {
+   border-left: 1px solid #000;
+   border-right: 1px solid #000;
+}
+ul {
+    -webkit-padding-start: 0;
+}
+li {
+    list-style: none;
+    font-size: 16px;
+}
+.main-tel{
+    color: red;
+    font-size: 32px;
+    padding-left: 48px;
+}
+
+.tel-2 {
+    margin-top: 24px;
+}
+.input {
+    width: 100%;
+    background: #ebebeb;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+    margin-bottom: 10px;
+    height: 30px;
+    min-height: 30px;
+    font-size: 14px;
+}
+input:focus {
+    outline: none;
+}
+
+
+.send {
+    background-color: #7f7f7f;
+    color: #fff;
+    padding: 6px 16px;
+    margin-top: 16px;
+    border: none;
+    font-size: 12px;
+}
+
+.icon {
+    font-size: 32px;
+    margin: 4px;
+}
+.icon2 {
+    margin: 0 12px;
+}
+.fa-facebook {
+    color: rgb(1, 28, 118);
+}
+.fa-youtube {
+    color: tomato;
+}
+.fa-pinterest {
+    color: red;
+}
+.fa-instagram {
+    color: rgba(182, 20, 20, 1);
+}
+.footer {
+    margin-top: 32px;
+}
+.footer p {
+    margin-top: 16px;
+}
+.footer p:last-child {
+    color: rgb(186, 186, 186);
+    margin-top: 32px;
+}
+.footer a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
