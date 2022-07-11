@@ -5,10 +5,35 @@
     font-size: 14px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-footer {
+header p {
+    display: inline;
+    color: rgb(81, 81, 81);
+    font-size: 12px ;
+    padding: 0 20px;
+    
+}
+header {
+    
+}
+header p:first-child {
+    border-right: 1px solid #ccc;
+}
+.cuahang p:last-child {
+    padding-left: 0;
+}
+.cuahang {
+    float: right;
+}
+header i {
+    font-size: 9px;
+    margin-left: 4px;
+}
+.select{
+    width: 10%;
+}
+footer, header {
     margin: auto;
-    padding: 24px 32px;
+    padding: 8px 32px;
     background-color: rgb(233, 232, 232);
 
     /* width: 70%; */
