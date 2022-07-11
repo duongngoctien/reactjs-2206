@@ -130,11 +130,11 @@ input:focus {
 .footer p {
     margin-top: 16px;
 }
-.footer p:last-child {
+.cuoitrang p {
     color: rgb(186, 186, 186);
     margin-top: 32px;
 }
-.footer a {
+.cuoitrang a {
     text-decoration: none;
     color: #000;
     font-weight: 600;
