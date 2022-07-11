@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        p {
+            padding-left: 16px;
+        }
+        button {
+            padding: 4px;
+            color: gray;
+            background-color: #ccc;
+            border: 0.5px solid #000;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function soChan() {
+            var text = " ";
+            for (var i = 1; i <= 10; i++) {
+                if (i % 2 == 0)
+                    text += i + "\t \t";
+            }
+            document.getElementById("demo").innerHTML = "Kết quả theo thứ tự tăng dần:" + text;
+
+        }
+        function kiemTraSoNguyenTo(n) {
+            var n;
+            var t = 1;
+            for (var i = 0; i < n; i++)
+                if (n % i == 0) {
+                    t++;
+                }
+            if (t == 2)
+                return true;
+        }
+
+        function soNguyenTo() {
+            var text = " ";
+            for (var i = 1; i <= 50; i++) {
+                if (kiemTraSoNguyenTo(i) == true)
+                    // console.log(i);
+                    text += i + ",\t \t";
+            }
+            document.getElementById("demo1").innerHTML = "Kết quả theo thứ tự tăng dần:" + text;
+        }
+    </script>
+</head>
+
+<body>
+    <button type="button" onclick="soChan()">Click</button>
+    <p id="demo">Tienes</p>
+    <button type="button" onclick="soNguyenTo()">Click please</button>
+    <p id="demo1">Tienes</p>
+
+</body>
+
+</html>
