@@ -49,14 +49,14 @@ function addHV() {
         namSinh: namSinh,
         diem: diem
     }
-
+    
     // console.log(objHV);
     danhSach.push(objHV);
     inNhap(objHV);
     // console.log(danhSach.length);
 }
 
-    
+
 function inNhap(obj) {
     var tbody = document.getElementById("tbody");
     var row = tbody.insertRow();
@@ -72,7 +72,7 @@ function inNhap(obj) {
 }
 
 function nhapDanhSach() {
-    for(var i = 0; i< danhSach.length; i++) {
+    for (var i = 0; i < danhSach.length; i++) {
         inNhap(danhSach[i]);
     }
 }
@@ -117,7 +117,7 @@ function searchDiem() {
             // console.log(obj);
             text += "<tr><td>" + obj.maSo + "</td><td>" + obj.hoTen + "</td><td>" + obj.namSinh + "</td><td>" + obj.diem + "</td></tr>";
 
-        }   
+        }
     }
     if (mau == text) {
         text += "<td></td><td>Không tìm thấy!!!</td>";
@@ -142,10 +142,10 @@ function searchTen() {
             // console.log(obj);
             text += "<tr><td>" + obj.maSo + "</td><td>" + obj.hoTen + "</td><td>" + obj.namSinh + "</td><td>" + obj.diem + "</td></tr>";
         }
-    } 
+    }
     if (text == mau) {
-            text += "<td></td><td>Không tìm thấy!!!</td>";
-        }
+        text += "<td></td><td>Không tìm thấy!!!</td>";
+    }
     document.getElementById("bodySearch").innerHTML = text;
     console.log("hi");
 }
@@ -155,11 +155,11 @@ var btn2 = document.getElementById("btn-searchTen");
 btn2.addEventListener("click", searchTen);
 
 function xepTheoDiem() {
-    for( var i= 0; i<danhSach.length; i++) {
-        if(danhSach[i].diem > danhSach[i-1].diem) {
+    for (var i = 0; i < danhSach.length; i++) {
+        if (danhSach[i].diem > danhSach[i - 1].diem) {
             var tam = danhSach[i];
-            danhSach[i] = danhSach[i-1];
-            danhSach[i-1] = tam;
+            danhSach[i] = danhSach[i - 1];
+            danhSach[i - 1] = tam;
         }
     }
 }
