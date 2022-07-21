@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.heading {
+    margin: 8px;
+}
+input {
+    margin: 32px;
+}
+
+.displaynone {
+    display: none;
+}
