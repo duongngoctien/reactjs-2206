@@ -110,7 +110,7 @@ function thongKe() {
 function searchDiem() {
     var text = "<thead><tr><th>Mã số</th><th>Họ tên</th><th>Năm sinh</th><th>Điểm</th></tr></thead>"
     var mau = text;
-    var diem = document.getElementById("searchDiem").value;
+    var diem = document.getElementById("searcDiem").value;
     for (var i = 0; i < danhSach.length; i++) {
         if (diem == danhSach[i].diem) {
             var obj = danhSach[i];
@@ -134,10 +134,10 @@ btn.addEventListener("click", searchDiem);
 
 function searchTen() {
     var text = "<thead><tr><th>Mã số</th><th>Họ tên</th><th>Năm sinh</th><th>Điểm</th></tr></thead>"
-    var ten = document.getElementById("searchTen").value;
+    var ten = document.getElementById("searcTen").value;
     var mau = text;
     for (var i = 0; i < danhSach.length; i++) {
-        if (ten == danhSach[i].hoTen) {
+        if (danhSach[i].hoTen.search(ten)!= -1) {
             var obj = danhSach[i];
             // console.log(obj);
             text += "<tr><td>" + obj.maSo + "</td><td>" + obj.hoTen + "</td><td>" + obj.namSinh + "</td><td>" + obj.diem + "</td></tr>";

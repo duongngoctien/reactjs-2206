@@ -24,6 +24,7 @@
            margin: 16px;
            margin-left: 0;
         }
+       
     </style>
 </head>
 
@@ -36,15 +37,18 @@
                 <div class="col-6">
                     <label for="email" class="">Email</label>
                     <input type="email" name="email" class="form-control">
+                    <span class="text-danger">*</span>
                 </div>
                 <div class="col-6">
                     <label for="password" class="">Password</label>
                     <input type="password" name="password" class="form-control">
+                    <span class="text-danger">*</span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <label for="add1">Address 1</label>
+                    <span class="text-danger">*</span>
                     <input type="text" name="add1" class="form-control">
                 </div>
             </div>
@@ -68,10 +72,12 @@
                     <input type="text" name="zip" class="form-control">
                 </div>
             </div>
-            <input type="checkbox" name="" id="" class="checkbox" style="display: inline ;">Check me out
-            <button class="btn bg-primary" style="display: block;">Sign in</button>
+            <input type="checkbox" name="" id="" class="checkbox"><span>Check me out</span>
+            <button class="btn bg-primary text-white" disabled style="display:block ;">Sign in</button>
         </form>
     </div>
 </body>
-
+    <script>
+        
+    </script>
 </html>

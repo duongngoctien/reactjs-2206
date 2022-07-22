@@ -152,10 +152,11 @@ function searchTen() {
     var ten = document.getElementById("searchTen").value;
     var mau = text;
     for (var i = 0; i < danhSach.length; i++) {
-        if (ten == danhSach[i].hoTen) {
+        if ((danhSach[i].hoTen).indexOf(ten) != -1) {
             var obj = danhSach[i];
             // console.log(obj);
-            text += "<tr><td>" + obj.maSo + "</td><td>" + obj.hoTen + "</td><td>" + obj.namSinh + "</td><td>" + obj.diem + "</td></tr>";
+            // text += "<tr><td>" + obj.maSo + "</td><td>" + obj.hoTen + "</td><td>" + obj.namSinh + "</td><td>" + obj.diem + "</td></tr>";
+            inNhap(obj);
         }
         if (text == mau) {
             text += "<td>Không tìm thấy!!!</td>";
