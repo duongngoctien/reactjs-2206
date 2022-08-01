@@ -29,7 +29,7 @@
                 </tbody>
                 <tbody>
 
-                    <th colspan="4" class="text-center text-italic"> <button type="button" onclick="showMore()" class="btn"
+                    <th colspan="4" class="text-center text-italic" id="last-row"> <button type="button" onclick="showMore()" class="btn"
                             id="show">Show more <i class="fa-solid fa-angles-down"></i></button></th>
                 </tbody>
             </table>
@@ -128,7 +128,7 @@
             x += 2;
             y += 2;
                 if( x >= danhSach.length) {
-                    btn.style.display  = "none";
+                    document.getElementById("last-row").style.display  = "none";
                 }   
             }
        
