@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homework-lesson5.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container container-sm">
+        <h2 class="text-center">Học viên</h2>
+        <div class="row my-4">
+            <table class="table-bordered table">
+                <thead>
+                    <tr>
+                        <th>Mã số</th>
+                        <th>Họ tên</th>
+                        <th>Năm sinh</th>
+                        <th>Điểm</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+                <tbody>
+
+                    <th colspan="4" class="text-center text-italic"> <button type="button" onclick="showMore()" class="btn"
+                            id="show">Show more <i class="fa-solid fa-angles-down"></i></button></th>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    var danhSach = [
+        {
+            maSo: 121,
+            hoTen: 'Tiến',
+            namSinh: 2001,
+            diem: 8
+        },
+        {
+            maSo: 565,
+            hoTen: "Văn",
+            namSinh: 1999,
+            diem: 10
+        },
+        {
+            maSo: 333,
+            hoTen: 'Mai',
+            namSinh: 2002,
+            diem: 10
+        },
+        {
+            maSo: 678,
+            hoTen: 'Nguyễn Văn A',
+            namSinh: 909,
+            diem: 6
+        },
+        {
+            maSo: 099,
+            hoTen: 'Ducky Momo',
+            namSinh: 2901,
+            diem: 7
+        },
+        {
+            maSo: 341,
+            hoTen: 'Chemse',
+            namSinh: 2011,
+            diem: 1
+        },
+        {
+            maSo: 099,
+            hoTen: 'Ducky Momo1',
+            namSinh: 2901,
+            diem: 7
+        },
+        {
+            maSo: 099,
+            hoTen: 'Ducky Momo2',
+            namSinh: 2901,
+            diem: 7
+        },
+        {
+            maSo: 099,
+            hoTen: 'Ducky Momo3',
+            namSinh: 2901,
+            diem: 7
+        }
+
+    ]
+
+    function inNhap(obj) {
+        var tbody = document.getElementById("tbody");
+        var row = tbody.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+
+        cell1.innerHTML = obj.maSo;
+        cell2.innerHTML = obj.hoTen;
+        cell3.innerHTML = obj.namSinh;
+        cell4.innerHTML = obj.diem;
+    }
+    function inDanhSach() {
+        for (var i = 0; i < 2; i++) {
+            inNhap(danhSach[i]);
+        }
+    }
+    inDanhSach();
+
+    let x = 2;
+    let y = 4;
+
+    function showMore() {
+        var btn = document.getElementById("show");
+        btn.onclick = function () {
+        newArr = danhSach.slice(x, y);
+            for (var i = 0; i < newArr.length; i++) {
+                inNhap(newArr[i]);
+            }
+            x += 2;
+            y += 2;
+                if( x > danhSach.length) {
+                    btn.style.display  = "none";
+                }   
+            }
+       
+    }
+
+    // var length = danhSach.length;
+    // var lengthCurrent = 2;
+    // function showMore() {
+       
+    //     var result = "";
+    //     for (var i = 0; i < length; i++) {
+    //         if (i < lengthCurrent) {
+    //             result += "<tr><td>" + danhSach[i].maSo + "</td><td>" + danhSach[i].hoTen + "</td><td>" + danhSach[i].namSinh + "</td><td>" + danhSach[i].diem + "</td></tr>";
+    //         }
+    //     }
+    //     lengthCurrent += 2;
+    //     document.getElementById("tbody").innerHTML = result;
+
+    // }
+    // showMore();
+
+</script>
+</html>
