@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/2b8a8a75e9.js" crossorigin="anonymous"></script>
+    <style>
+        .sale-off {
+            text-decoration: line-through;
+        }
+        .cart {
+            background-color: #ccc;
+            border-radius: 10%;
+            padding: 6px 14px;
+            margin-right: 16px;
+            position: relative;
+        }
+        .cart span {
+            position: absolute;
+            top: 2px;
+            margin-left: 2px;
+            
+        }
+        .cart:hover {
+            background-color: aqua;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>My First Bootstrap Page</h1>
+        <p>Resize this responsive page to see the effect!</p>
+
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" alt="Los Angeles" width="1100"
+                        height="500">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" alt="Chicago" width="1100"
+                        height="500">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" alt="New York" width="1100"
+                        height="500">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style="margin:24px 0;">
+            <a class="navbar-brand" href="javascript:void(0)">Logo</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navb">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navb">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="javascript:void(0)">Disabled</a>
+                    </li>
+                </ul>
+                <div class="cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="numCart"></span>
+                </div>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" id="search">
+                    <button class="btn btn-success my-2 my-sm-0" id="search" type="button">Search</button>
+                </form>
+            </div>
+        </nav>
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Products</li>
+                <li class="offset-md-9">
+                    <select class="form-control form-control-sm sort">
+                        <option>Order By</option>
+                        <option>Decrease</option>
+                        <option>Increase</option>
+                    </select>
+                </li>
+            </ol>
+
+        </nav>
+
+        <div class="row mb-3 mt-3" id="products">
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Vuong 2017</h4>
+                        <p class="card-text">
+                            <i class="sale-off">$1000</i> -> <i>$500</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">VivoBook 2020</h4>
+                        <p class="card-text">
+                            <i>$544</i>
+                        </p>
+                        <p>Long</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">ChmSe</h4>
+                        <p class="card-text">
+                            <i>$1001</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">John Doe</h4>
+                        <p class="card-text">
+                            <i>$600</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Macbook 3000</h4>
+                        <p class="card-text">
+                            <i class="sale-off">$1000</i> -> <i>$500</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Macbook 1900</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Tien</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">John Doe</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Macbook 800</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Tiense</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">John DE</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Iphone15</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">John C</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Macbook AC</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Tiennn</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">John A</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Tiến nè</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Tiến nè</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Tiến nè</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Tiến nè</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-3 product">
+                <div class="card" style="">
+                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Tiến nè</h4>
+                        <p class="card-text">
+                            <i>$1000</i>
+                        </p>
+                        <p>Description</p>
+                        <a href="" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mx-auto" id="page">
+            <!-- <div class="page">
+        1
+    </div>
+    <div class="page">
+        2
+        
+    </div>
+    <div class="page">
+        3
+        
+    </div> -->
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-3">
+                <h5>THÔNG TIN</h5>
+                <p><a href="#">Giới thiệu</a></p>
+                <p><a href="#">Sản phẩm</a></p>
+                <p><a href="#">Tin tức</a></p>
+                <p><a href="#">Tuyển dụng</a></p>
+                <p><a href="#">Liên hệ</a></p>
+            </div>
+            <div class="col-sm-3">
+                <h3>Column 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+            <div class="col-sm-3">
+                <h3>Column 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+            <div class="col-sm-3">
+                <h3>Column 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+<style>
+    .page {
+        display: inline-block;
+        padding: 4px 12px;
+        border: 1px solid black;
+        /* line-height: 8px; */
+        margin-right: 4px;
+    }
+
+    .page:hover {
+        background-color: aqua;
+        cursor: pointer;
+    }
+</style>
+<script src="lesson10.js"></script>
+
+</html>
