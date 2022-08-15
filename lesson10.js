@@ -145,24 +145,34 @@ $(function () {
 
     //         $('#products').append(productListSorted);
     //         $('.product').remove();
-        
+
 
     //     // hienthiPage();
 
     // })
-    let a = 0;
-    $('.numCart').html(sessionStorage.getItem('cart'));
 
 
-        $(".btn").click(function (event) {
-            a++;
-            console.log(a);
-            sessionStorage.setItem('cart', a);
-            $('.numCart').html(sessionStorage.getItem('cart'));
 
-            event.preventDefault();
-        });
-        // let l = localStorage.length;
-        // console.log(l);
+
+    
+    // === Save Cart====
+
+
+    $('.numCart').html(localStorage.clickcount);
+    function clickCounter() {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount) + 1;
+        } else {
+            localStorage.clickcount = 1;
+        }   
+        $('.numCart').html(localStorage.clickcount);
+    }
+
+    $('.btn').click(function (event) {
+        clickCounter();
+        event.preventDefault();
+    })
+
+    
 
 })

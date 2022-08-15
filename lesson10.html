@@ -17,19 +17,23 @@
             text-decoration: line-through;
         }
         .cart {
-            background-color: #ccc;
-            border-radius: 10%;
-            padding: 6px 14px;
-            margin-right: 16px;
-            position: relative;
+           
         }
         .cart span {
             position: absolute;
-            top: 2px;
-            margin-left: 2px;
-            
+            top: 0;
+            margin-left: 1px;
+            font-size: 13px;
         }
-        .cart:hover {
+        .cart button {
+            background-color: #ccc;
+            border-radius: 10%;
+            border: none;
+            padding: 6px 16px;
+            margin-right: 16px;
+            position: relative;
+        }
+        .cart:hover button{
             background-color: aqua;
             cursor: pointer;
         }
@@ -97,15 +101,21 @@
                         <a class="nav-link disabled" href="javascript:void(0)">Disabled</a>
                     </li>
                 </ul>
+
+                <!-- Cart -->
                 <div class="cart">
-                    <i class="fa-solid fa-cart-shopping"></i>
+                    <button type="button" class="cart-cart" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fa-solid fa-cart-shopping"></i>
                     <span class="numCart"></span>
+                    </button>
                 </div>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search" id="search">
                     <button class="btn btn-success my-2 my-sm-0" id="search" type="button">Search</button>
                 </form>
             </div>
+
+            
         </nav>
 
         <nav aria-label="breadcrumb">
@@ -475,10 +485,37 @@
                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
             </div>
         </div>
-
-
     </div>
+    <!-- modal cart --> 
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                
+           <table class="table-bordered table">
+            <tr>
+                <td class="text-center font-weight-bold">#</td>
+                <td class="text-center font-weight-bold">Name</td>
+                <td class="text-center font-weight-bold">Quantity</td>
+                <td class="text-center font-weight-bold">Price</td>
+                <td class="text-center font-weight-bold">Total</td>
 
+              </tr>
+           </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn-primary">Pay</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 <style>
     .page {
@@ -492,6 +529,10 @@
     .page:hover {
         background-color: aqua;
         cursor: pointer;
+    }
+    .total {
+        float: right;
+       
     }
 </style>
 <script src="lesson10.js"></script>
