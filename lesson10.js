@@ -167,12 +167,65 @@ $(function () {
         }   
         $('.numCart').html(localStorage.clickcount);
     }
-
+    let listProduct = [];
     $('.btn').click(function (event) {
-        clickCounter();
         event.preventDefault();
-    })
+        clickCounter();
+        let nameProduct = $(this).parent().find('.card-title').text();
+        let img =   $(this).parent().parent().find('.card-img-top').attr('src');
+        let price = $(this).parent().find('i:not(.sale-off)').text();
 
+        let product = {
+            nameProduct : nameProduct,
+            img: img,
+            price: price,
+            quantity: 1
+        }
+        if(checkArr(product,listProduct)) {
+            product.quantity++;
+        }
+        else {
+            listProduct.push(product);
+        }
+        var productJs = JSON.stringify(listProduct);
+        localStorage.setItem("listProduct",productJs);
+
+        renderCart();   
+    })
+    renderCart();
+
+    function renderCart() {
+        let list = localStorage.getItem('listProduct');
+        let listt = JSON.parse(list)
+        console.log(listt);
+        for(let i = 0; i < listt.length; i++){
+            var txt = '';
+            txt +=`<tr>
+            <td class="text-center font-weight-bold" style = "width: 200px ">
+                <img class="card-img-top" src="${listt[i].img}" alt="Card image" style="width:50%;" >
+                </td>
+            <td class="text-center font-weight-bold">
+                ${listt[i].nameProduct}
+                </td>
+            <td class="text-center font-weight-bold">${listt[i].quantity}</td>
+            <td class="text-center font-weight-bold">${listt[i].price}</td>
+            <td class="text-center font-weight-bold">Total</td></tr>`;
+            
+        $('.table-body').append(txt);
+
+        }
+        
+    }
     
+    function checkArr( element , arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i ++){
+            if (arr[i] === element)  {
+                count ++;
+                break
+            }
+        }
+        return (count >0) ? true : false
+    }
 
 })
