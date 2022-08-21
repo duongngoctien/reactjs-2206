@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/2b8a8a75e9.js" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <div class="container col-3">
+        <h2 class="text-center">ATM tự động nhưng không cho ra tiền</h2>
+        <div class="row">
+            <input type="text" class="inputMoney form-control" placeholder="Nhập số tiền bạn muốn rút">
+            <button class="btn btn-primary my-3" id="confirm">Rút</button>
+        </div>
+        <div class="row" id="output">
+        </div>
+    </div>
+</body>
+
+<script>
+    $(function () {
+
+        $('#confirm').click(function () {
+            var input = $('.inputMoney').val();
+            var maxQuantity500 = 10;
+            var maxQuantity200 = 10;
+            var maxQuantity100 = 10;
+            var maxQuantity50 = 10;
+            var maxMoney = maxQuantity100 * 100000 + maxQuantity200 * 200000 + maxQuantity500 * 500000 + maxQuantity50 * 50000;
+            var text = "";
+
+            if (input % 50000 !== 0) {
+                var text = `<p class = text-danger> Số tiền muốn rút phải là bội của 50000 </p>`;
+            }
+            else if (input > maxMoney) {
+                text = `<p class = text-danger> Giao dịch không thành công! Số tiền rút vượt quá số tiền trong máy </p>`
+            }
+            else {
+                    var quantity500 = 0;
+                    var quantity200 = 0;
+                    var quantity100 = 0;
+                    var quantity50 = 0;
+
+                    do {
+                        if ( input >= 500000 && quantity500 < maxQuantity500) {
+                            quantity500++;
+                            input-= 500000;
+                        }
+                        else if ( input >= 200000 && quantity200 < maxQuantity200) {
+                            quantity200++;
+                            input-= 200000;
+                        }
+                        else if ( input >= 100000 && quantity100 < maxQuantity100) {
+                            quantity100++;
+                            input-= 100000;
+                        }
+                        else {
+                            quantity50++;
+                            input-= 50000;
+                        }
+                    } while (input > 0);
+
+                    
+                text = `<p>${quantity500} tờ 500.000 <br>
+                        ${quantity200} tờ 200.000 <br>
+                        ${quantity100} tờ 100.000 <br>
+                        ${quantity50} tờ 50.000 </p>`;
+            }
+
+
+            $('#output').html(text);
+        })
+        
+
+    })
+</script>
+
+</html>
