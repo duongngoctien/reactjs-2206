@@ -30,7 +30,7 @@ b7: đẩy code lên github
 VD: git push origin lesson2
 
 
-+++++++++++++++++
+    +++++++++++++++++
     ĐƯA CODE VỀ MÁY
     cla
 b1:
@@ -38,4 +38,5 @@ b1:
     git checkout main
 
 b2:
+
     git pull origin main
