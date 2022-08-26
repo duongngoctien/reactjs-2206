@@ -28,59 +28,115 @@
 
 <script>
     $(function () {
-
-        $('#confirm').click(function () {
-            var input = $('.inputMoney').val();
-            var maxQuantity500 = 10;
-            var maxQuantity200 = 10;
-            var maxQuantity100 = 10;
-            var maxQuantity50 = 10;
-            var maxMoney = maxQuantity100 * 100000 + maxQuantity200 * 200000 + maxQuantity500 * 500000 + maxQuantity50 * 50000;
-            var text = "";
-
-            if (input % 50000 !== 0) {
-                var text = `<p class = text-danger> Số tiền muốn rút phải là bội của 50000 </p>`;
+        class atm {
+            constructor(maxQuantity50, maxQuantity100, maxQuantity200, maxQuantity500) {
+                this.maxQuantity50 = maxQuantity50;
+                this.maxQuantity100 = maxQuantity100;
+                this.maxQuantity200 = maxQuantity200;
+                this.maxQuantity500 = maxQuantity500;
             }
-            else if (input > maxMoney) {
-                text = `<p class = text-danger> Giao dịch không thành công! Số tiền rút vượt quá số tiền trong máy </p>`
-            }
-            else {
+            rutTien() {
+                var moneyInput = $('.inputMoney').val();
+                var maxMoney = this.maxQuantity50 * 50000 + this.maxQuantity100 * 100000 + this.maxQuantity200 * 200000 + this.maxQuantity500 * 500000;
+                var text = "";
+                if (moneyInput % 50000 !== 0) {
+                    var text = `<p class = text-danger> Số tiền muốn rút phải là bội của 50000 </p>`;
+                }
+                else if (moneyInput > maxMoney) {
+                    text = `<p class = text-danger> Giao dịch không thành công! Số tiền rút vượt quá số tiền trong máy </p>`
+                }
+                else {
                     var quantity500 = 0;
                     var quantity200 = 0;
                     var quantity100 = 0;
                     var quantity50 = 0;
 
                     do {
-                        if ( input >= 500000 && quantity500 < maxQuantity500) {
+                        if (moneyInput >= 500000 && quantity500 < this.maxQuantity500) {
                             quantity500++;
-                            input-= 500000;
+                            moneyInput -= 500000;
                         }
-                        else if ( input >= 200000 && quantity200 < maxQuantity200) {
+                        else if (moneyInput >= 200000 && quantity200 < this.maxQuantity200) {
                             quantity200++;
-                            input-= 200000;
+                            moneyInput -= 200000;
                         }
-                        else if ( input >= 100000 && quantity100 < maxQuantity100) {
+                        else if (moneyInput >= 100000 && quantity100 < this.maxQuantity100) {
                             quantity100++;
-                            input-= 100000;
+                            moneyInput -= 100000;
                         }
                         else {
                             quantity50++;
-                            input-= 50000;
+                            moneyInput -= 50000;
                         }
-                    } while (input > 0);
+                    } while (moneyInput > 0);
 
-                    
-                text = `<p>${quantity500} tờ 500.000 <br>
+
+                    text = `<p>${quantity500} tờ 500.000 <br>
                         ${quantity200} tờ 200.000 <br>
                         ${quantity100} tờ 100.000 <br>
                         ${quantity50} tờ 50.000 </p>`;
+                }
+                return text;
             }
+        }
 
-
-            $('#output').html(text);
+        atm1 = new atm(10,10,10,10);
+        console.log(atm1);
+        atm1.rutTien();
+        $('#confirm').click(function () {
+            $('#output').html(atm1.rutTien());
         })
-        
 
+        // $('#confirm').click(function () {
+        //     var input = $('.inputMoney').val();
+        //     var maxQuantity500 = 10;
+        //     var maxQuantity200 = 10;
+        //     var maxQuantity100 = 10;
+        //     var maxQuantity50 = 10;
+        //     var maxMoney = maxQuantity100 * 100000 + maxQuantity200 * 200000 + maxQuantity500 * 500000 + maxQuantity50 * 50000;
+        //     var text = "";
+
+        //     if (input % 50000 !== 0) {
+        //         var text = `<p class = text-danger> Số tiền muốn rút phải là bội của 50000 </p>`;
+        //     }
+        //     else if (input > maxMoney) {
+        //         text = `<p class = text-danger> Giao dịch không thành công! Số tiền rút vượt quá số tiền trong máy </p>`
+        //     }
+        //     else {
+        //         var quantity500 = 0;
+        //         var quantity200 = 0;
+        //         var quantity100 = 0;
+        //         var quantity50 = 0;
+
+        //         do {
+        //             if (input >= 500000 && quantity500 < maxQuantity500) {
+        //                 quantity500++;
+        //                 input -= 500000;
+        //             }
+        //             else if (input >= 200000 && quantity200 < maxQuantity200) {
+        //                 quantity200++;
+        //                 input -= 200000;
+        //             }
+        //             else if (input >= 100000 && quantity100 < maxQuantity100) {
+        //                 quantity100++;
+        //                 input -= 100000;
+        //             }
+        //             else {
+        //                 quantity50++;
+        //                 input -= 50000;
+        //             }
+        //         } while (input > 0);
+
+
+        //         text = `<p>${quantity500} tờ 500.000 <br>
+        //                 ${quantity200} tờ 200.000 <br>
+        //                 ${quantity100} tờ 100.000 <br>
+        //                 ${quantity50} tờ 50.000 </p>`;
+        //     }
+
+
+        //     $('#output').html(text);
+        // })
     })
 </script>
 
